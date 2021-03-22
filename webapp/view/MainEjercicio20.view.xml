@@ -1,0 +1,53 @@
+<mvc:View controllerName="Ejercicio20.Ejercicio20.controller.MainEjercicio20" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:core="sap.ui.core"
+displayBlock="true" 
+xmlns="sap.m">
+	
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="idTablaProductos" items="{ProductosJSON>/value}">
+                
+                <columns>
+                    <Column >
+                            <Text text="{i18n>tablaIdOrden}"></Text>
+                    </Column>
+                    <Column >
+                            <Text text="{i18n>tablaIdProducto}"></Text>
+                    </Column>
+                    <Column >
+                            <Text text="{i18n>tablaPrecio}"></Text>
+                    </Column>
+                    <Column >
+                            <Text text="{i18n>tablaCantidad}"></Text>
+                    </Column>
+                    <Column >
+                            <Text text="{i18n>tablaDescuento}"></Text>
+                    </Column>
+                </columns>
+                <items>
+                        <ColumnListItem 
+                        type="Active"
+				        press="elementOnFocus"> <!--CREA LAS FILAS-->
+                            <cells>
+                                <Text text="{ProductosJSON>OrderID}"></Text>
+                            </cells>
+                            <cells> 
+                                <Text text="{ProductosJSON>ProductID}"></Text>
+                            </cells>
+                            <cells> 
+                                <Text text="{ProductosJSON>UnitPrice}"></Text>
+                            </cells>
+                            <cells> 
+                                <Text text="{ProductosJSON>Quantity}"></Text>
+                            </cells>
+                            <cells> 
+                                <Text text="{ProductosJSON>Discount}"></Text>
+                            </cells>
+                        </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+			
+</mvc:View>

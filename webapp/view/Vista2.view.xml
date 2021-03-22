@@ -1,0 +1,37 @@
+<mvc:View controllerName="Ejercicio20.Ejercicio20.controller.Vista2" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:l="sap.ui.layout"
+displayBlock="true" 
+xmlns="sap.m">
+	
+    <Page id="page" title="{i18n>orderHeader}">
+        <content>
+            <l:VerticalLayout
+            class="sapUiContentPadding"
+            width="100%">
+		        <l:content>
+			        <List
+                        binding="{ProductoSeleccionadoJSON>}"
+                        headerText="{i18n>orderDetail}" >
+                        <DisplayListItem
+                            label="{i18n>tablaIdOrden}"
+                            value="{ProductoSeleccionadoJSON>/OrderID}" />
+                        <DisplayListItem
+                            label="{i18n>tablaIdProducto}"
+                            value="{ProductoSeleccionadoJSON>/ProductID}" />
+                        <DisplayListItem
+                            label="{i18n>tablaPrecio}"
+                            value="{ProductoSeleccionadoJSON>/UnitPrice}"/>
+                        <DisplayListItem
+                            label="{i18n>tablaCantidad}"
+                            value="{ProductoSeleccionadoJSON>/Quantity}"/>
+                        <DisplayListItem
+                        label="{i18n>tablaDescuento}"
+                        value="{ProductoSeleccionadoJSON>/Discount}%"/>
+			        </List>
+		        </l:content>
+	        </l:VerticalLayout>
+        </content>
+    </Page>
+			
+</mvc:View>
